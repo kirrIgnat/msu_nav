@@ -1,0 +1,101 @@
+function [h] = big_matr_h(N, num_layers,num_axes, n1_fin,n2_fin,n3_fin)
+bool=
+h=[];
+for j=1:num_layers
+    for i=1:num_axes(j)
+        h(end+1)=[n1_fin(i,j)*n1_fin(i,j)];
+    end
+end
+for j=1:num_layers
+    for i=N+1:N+num_axes(j)
+        h(end+1)=[n1_fin(i,j)*n1_fin(i,j)];
+    end
+end
+
+for j=1:num_layers
+    for i=1:num_axes(j)
+        h(end+1)=[n2_fin(i,j)*n2_fin(i,j)];
+    end
+end
+for j=1:num_layers
+    for i=N+1:N+num_axes(j)
+        h(end+1)=[n2_fin(i,j)*n2_fin(i,j)];
+    end
+end
+
+for j=1:num_layers
+    for i=1:num_axes(j)
+        h(end+1)=[n3_fin(i,j)*n3_fin(i,j)];
+    end
+end
+for j=1:num_layers
+    for i=N+1:N+num_axes(j)
+        h(end+1)=[n3_fin(i,j)*n3_fin(i,j)];
+    end
+end
+
+for j=1:num_layers
+    for i=1:num_axes(j)
+        h(end+1)=[n1_fin(i,j)*n2_fin(i,j)];
+    end
+end
+for j=1:num_layers
+    for i=N+1:N+num_axes(j)
+        h(end+1)=[n1_fin(i,j)*n2_fin(i,j)];
+    end
+end
+
+for j=1:num_layers
+    for i=1:num_axes(j)
+        h(end+1)=[n1_fin(i,j)*n3_fin(i,j)];
+    end
+end
+for j=1:num_layers
+    for i=N+1:N+num_axes(j)
+        h(end+1)=[n1_fin(i,j)*n3_fin(i,j)];
+    end
+end
+
+for j=1:num_layers
+    for i=1:num_axes(j)
+        h(end+1)=[n2_fin(i,j)*n3_fin(i,j)];
+    end
+end
+for j=1:num_layers
+    for i=N+1:N+num_axes(j)
+        h(end+1)=[n2_fin(i,j)*n3_fin(i,j)];
+    end
+end
+
+for j=1:num_layers
+    for i=1:num_axes(j)
+        h(end+1)=[bool*n1_fin(i,j)];
+    end
+end
+for j=1:num_layers
+    for i=N+1:N+num_axes(j)
+        h(end+1)=[bool*n1_fin(i,j)];
+    end
+end
+for j=1:num_layers
+    for i=1:num_axes(j)
+        h(end+1)=[bool*n2_fin(i,j)];
+    end
+end
+for j=1:num_layers
+    for i=N+1:N+num_axes(j)
+        h(end+1)=[bool*n2_fin(i,j)];
+    end
+end
+for j=1:num_layers
+    for i=1:num_axes(j)
+        h(end+1)=[bool*n3_fin(i,j)];
+    end
+end
+for j=1:num_layers
+    for i=N+1:N+num_axes(j)
+        h(end+1)=[bool*n3_fin(i,j)];
+    end
+end
+end
+
